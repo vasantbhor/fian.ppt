@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>सांपत्तिक स्थिती - ३१.३.२०२६</title>
+    <meta name="description" content="Premium Split-Screen Financial Dashboard">
+    <link rel="stylesheet" href="style.css">
+    <!-- Local Libraries for Offline/Transferable Use -->
+    <script src="lib/chart.js"></script>
+    <script src="lib/chartjs-plugin-datalabels.js"></script>
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <!-- Top Branding Banner -->
+        <div class="top-banner animate-up">
+            श्री अंबिका ग्रामीण बिगरशेती सहकारी पतसंस्था मर्या.खोडद .
+        </div>
+
+        <!-- Header -->
+        <header class="animate-up">
+            <h1 class="main-title">सांपत्तिक स्थिती</h1>
+            <div class="date-subtitle">दिनांक ३१.३.२०२६ अखेरची</div>
+            <p style="color: var(--text-muted); font-size: 1.2rem; margin-top: 1rem;">लेखापरीक्षण पूर्व विवरण | आकडे रु. लाखात</p>
+        </header>
+
+        <!-- Main Split Content -->
+        <main class="split-dashboard">
+            <!-- Left Side: Figures in Attractive Boxes -->
+            <div class="figures-panel">
+                <div class="figures-grid">
+                    <div class="figure-box animate-up" style="--card-color: var(--clr-profit);">
+                        <span class="label">निव्वळ नफा (Net Profit)</span>
+                        <div class="value"><span class="counter" data-target="293.57">0</span> <span class="unit">Rs. Lacs</span></div>
+                    </div>
+                    <div class="figure-box animate-up" style="--card-color: var(--clr-business);">
+                        <span class="label">एकूण व्यवसाय (Total Business)</span>
+                        <div class="value"><span class="counter" data-target="39255.35">0</span> <span class="unit">Rs. Lacs</span></div>
+                    </div>
+                    <div class="figure-box animate-up" style="--card-color: var(--clr-working);">
+                        <span class="label">खेळते भांडवल (Working Capital)</span>
+                        <div class="value"><span class="counter" data-target="26014.04">0</span> <span class="unit">Rs. Lacs</span></div>
+                    </div>
+                    <div class="figure-box animate-up" style="--card-color: var(--clr-capital);">
+                        <span class="label">वसूल भागभांडवल (Share Capital)</span>
+                        <div class="value"><span class="counter" data-target="1272.24">0</span> <span class="unit">Rs. Lacs</span></div>
+                    </div>
+                    <div class="figure-box animate-up" style="--card-color: var(--clr-members);">
+                        <span class="label">सभासद संख्या (Members)</span>
+                        <div class="value"><span class="counter" data-target="17275">0</span> <span class="unit">No.</span></div>
+                    </div>
+                    <div class="figure-box animate-up" style="--card-color: var(--clr-funds);">
+                        <span class="label">निधी (Funds)</span>
+                        <div class="value"><span class="counter" data-target="1276.28">0</span> <span class="unit">Rs. Lacs</span></div>
+                    </div>
+                    <div class="figure-box animate-up" style="--card-color: var(--clr-deposits);">
+                        <span class="label">ठेवी (Deposits)</span>
+                        <div class="value"><span class="counter" data-target="22479.4">0</span> <span class="unit">Rs. Lacs</span></div>
+                    </div>
+                    <div class="figure-box animate-up" style="--card-color: var(--clr-investment);">
+                        <span class="label">गुंतवणूक (Investment)</span>
+                        <div class="value"><span class="counter" data-target="8092.58">0</span> <span class="unit">Rs. Lacs</span></div>
+                    </div>
+                    <div class="figure-box animate-up" style="--card-color: var(--clr-loans);">
+                        <span class="label">कर्ज (Loans)</span>
+                        <div class="value"><span class="counter" data-target="16795.96">0</span> <span class="unit">Rs. Lacs</span></div>
+                    </div>
+
+                    <!-- NPA Subsection moved inside grid for better grouping -->
+                    <div class="npa-panel animate-up">
+                        <div class="npa-item">
+                            <span class="label">थकबाकी (Overdue)</span>
+                            <div class="value" style="font-size: 2.5rem;"><span class="counter" data-target="3.38">0</span> <span class="unit">%</span></div>
+                            <div class="progress-wrap"><div class="progress-bar" style="--final-width: 33.8%; --card-color: #f43f5e"></div></div>
+                        </div>
+                        <div class="npa-item">
+                            <span class="label">Gross NPA</span>
+                            <div class="value" style="font-size: 2.5rem;"><span class="counter" data-target="6.21">0</span> <span class="unit">%</span></div>
+                            <div class="progress-wrap"><div class="progress-bar" style="--final-width: 62.1%; --card-color: #fb923c"></div></div>
+                        </div>
+                        <div class="npa-item">
+                            <span class="label">Net NPA</span>
+                            <div class="value" style="font-size: 2.5rem;"><span class="counter" data-target="4.27">0</span> <span class="unit">%</span></div>
+                            <div class="progress-wrap"><div class="progress-bar" style="--final-width: 42.7%; --card-color: #facc15"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Round Graph Centerpiece -->
+            <div class="graph-panel">
+                <div class="chart-wrapper sticky-chart animate-up">
+                    <div class="chart-header">व्यवसाय विभागणी (Business Breakdown)</div>
+                    <canvas id="businessChart"></canvas>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            प्रीमियम डॅशबोर्ड | ३१ मार्च २०२६
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
