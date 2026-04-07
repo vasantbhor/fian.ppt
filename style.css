@@ -45,6 +45,10 @@ body {
   overflow-x: hidden;
 }
 
+@media (max-width: 600px) {
+  body { padding: 0.8rem; }
+}
+
 .dashboard-wrapper {
   max-width: 1800px;
   margin: 0 auto;
@@ -280,8 +284,24 @@ footer {
   .split-dashboard { grid-template-columns: 1fr; gap: 3rem; }
   .sticky-chart { position: relative; top: 0; min-height: 500px; }
   .main-title { font-size: 3rem; }
+  .npa-panel { grid-column: 1 / -1; } /* Allow it to span full width on small screens */
 }
+
+@media (max-width: 768px) {
+  .top-banner { 
+    font-size: 1.6rem; 
+    padding: 1rem 0.5rem; 
+    margin-top: 0.5rem; 
+    border-radius: 12px;
+  }
+  .main-title { font-size: 2.5rem; }
+  .npa-panel { flex-direction: column; gap: 1rem; padding: 1.2rem; }
+  .npa-item { width: 100%; border-bottom: 1px solid rgba(255, 255, 255, 0.05); padding-bottom: 1rem; }
+  .npa-item:last-child { border-bottom: none; }
+}
+
 @media (max-width: 600px) {
   .npa-panel { grid-template-columns: 1fr; }
   .value { font-size: 2.8rem; }
+  .top-banner { font-size: 1.2rem; } /* Extra small for phones */
 }
